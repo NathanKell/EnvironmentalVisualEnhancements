@@ -30,7 +30,7 @@ namespace Clouds
         private ShaderFloats scaledShaderFloats;
         private ShaderFloats shaderFloats;
         private Overlay CloudOverlay;
-        private VolumeManager volume = null;
+        //private VolumeManager volume = null;
 
         public TextureSet MainTexture { get { return mainTexture; } }
         public TextureSet DetailTexture { get { return detailTexture; } }
@@ -167,7 +167,7 @@ namespace Clouds
 
         private void MacroCallback(bool value)
         {
-            if (volume != null && !value)
+       /*     if (volume != null && !value)
             {
                 volume.Destroy();
                 volume = null;
@@ -175,7 +175,7 @@ namespace Clouds
             else if(volume == null && value)
             {
                 volume = new VolumeManager(CloudOverlay.Radius, (Texture2D)this.mainTexture.Texture, CloudParticleMaterial, this.CloudOverlay.Transform);
-            }
+            }*/
         }
 
         public void UpdateFloats()
@@ -316,19 +316,20 @@ namespace Clouds
             {
                 Layers.Remove(this);
             }
-            volume.Destroy();
-            volume = null;
+            //volume.Destroy();
+            //volume = null;
         }
 
         
         internal void UpdateParticleClouds(Vector3 WorldPos)
         {
-            if (volume != null)
+         /*   if (volume != null)
             {
                 Vector3 intendedPoint = this.CloudOverlay.Transform.InverseTransformPoint(WorldPos);
                 intendedPoint.Normalize();
                 volume.Update(intendedPoint);
             }
+          * */
         }
         
     }
