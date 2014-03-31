@@ -52,7 +52,7 @@ namespace Clouds
             color = cloudGUI.Color.Color;
             UpdateTextures();
             UpdateFloats();
-            CloudOverlay.UpdateAltitude(altitude);
+            CloudOverlay.UpdateAltitude(true, altitude);
         }
 
         public CloudLayer(String body, Color color, float altitude,
